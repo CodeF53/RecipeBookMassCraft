@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "bookmasscraft",
+  "version": "${version}",
+
+  "name": "Recipe Book Mass Craft",
+  "description": "Adds the ability to use the built in recipe book for mass crafting in ItemScroller",
+  "authors": [
+    "CodeF53#0241",
+    "boyenn#3717"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/RecipeBookMassCraft ",
+    "sources": "https://github.com/CodeF53/RecipeBookMassCraft"
+  },
+
+  "license": "unlicense",
+  "icon": "assets/bookmasscraft/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.F53.bookmasscraft.RecipeBookMassCraft"
+    ]
+  },
+  "mixins": [
+    "bookmasscraft.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17",
+    "malilib": ">=0.12.1",
+    "itemscroller": ">=0.16.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.F53.bookmasscraft.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+    "ItemScrollerGuiConfigsMixin",
+    "ItemScrollerConfigsMixin",
+    "RecipeBookWidgetAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
