@@ -15,7 +15,16 @@ Click a recipe, press and hold the key combo bound to `recipeBookMassCraft`, whi
 To change the key combo, press `I`+`C`, click `Hotkeys` and search for `recipeBookMassCraft`
 
 ## Note about this mod:
-This mod was originally made by `boyenn#3717` in September 2021, released as a dev build in a few discord servers. He never worked on the mod further than this initial development.
+`boyenn#3717` made this thing, released it as a dev build in a few discord servers, but never worked on it further.
 
-I really liked the idea his mod implemented, so I decompiled it, translated the intermediary mappings to 1.19 Yarn mappings, and fixed a few bugs.
+![boyenn permission for me to release this](https://media.discordapp.net/attachments/991920920161689711/1000983795299790948/Screenshot_20220724-223149.jpg)
 
+This mod is 100% based on `boyenn#3717`'s port, with the intermediary mappings translated to 1.19 Yarn mappings.
+
+## Who came up with recipe book mass craft???
+
+Boyenn says he ported this feature from the 1.12.2 itemscroller, but according to Masa (ItemScroller Dev and Literal God), this feature isn't in 1.12.2 itemscroller.
+
+![masa saying the feature isnt in 1.12.2 itemscroller](https://media.discordapp.net/attachments/995849223696285726/1000987190534361240/unknown.png)
+
+I have literally no idea where this idea originated, just know I did my best to give proper credit.
