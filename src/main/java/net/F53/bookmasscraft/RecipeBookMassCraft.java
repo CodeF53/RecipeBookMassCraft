@@ -20,6 +20,7 @@ import net.minecraft.client.gui.screen.ingame.CraftingScreen;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.recipe.Recipe;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.slot.Slot;
 
 import java.util.ArrayList;
@@ -44,6 +45,9 @@ public class RecipeBookMassCraft implements ClientModInitializer, IClientTickHan
 	}
 
 	public void onClientTick(final MinecraftClient minecraftClient) {
+		if (minecraftClient.world == null) return;
+		final DynamicRegistryManager registryManager = minecraftClient.world.getRegistryManager();
+
 		if (GuiUtils.getCurrentScreen() instanceof HandledScreen && !(GuiUtils.getCurrentScreen() instanceof CreativeInventoryScreen) && RecipeBookMassCraft.RECIPE_BOOK_MASS_CRAFT.getKeybind().isKeybindHeld()) {
 			final Screen guiScreen = GuiUtils.getCurrentScreen();
 			final HandledScreen<?> gui = (HandledScreen<?>)guiScreen;
@@ -54,16 +58,16 @@ public class RecipeBookMassCraft implements ClientModInitializer, IClientTickHan
 				final Recipe<?> lastClickedRecipe = recipeBookWidget.getRecipeBookResults().getLastClickedRecipe();
 				if (lastClickedRecipe != null) {
 					final Slot slot = CraftingHandler.getFirstCraftingOutputSlotForGui(gui);
-					if (slot != null && !InventoryUtils.isStackEmpty(lastClickedRecipe.getOutput())) {
-						InventoryUtils.dropStacks(gui, lastClickedRecipe.getOutput(), slot, false);
+					if (slot != null && !InventoryUtils.isStackEmpty(lastClickedRecipe.getOutput(registryManager))) {
+						InventoryUtils.dropStacks(gui, lastClickedRecipe.getOutput(registryManager), slot, false);
 					}
 					minecraftClient.interactionManager.clickRecipe(craftingScreen.getScreenHandler().syncId, lastClickedRecipe, true);
 					int failsafe = 0;
-					while (++failsafe < 40 && InventoryUtils.areStacksEqual(outputSlot.getStack(), lastClickedRecipe.getOutput())) {
-						InventoryUtils.dropStacksWhileHasItem(gui, outputSlot.id, lastClickedRecipe.getOutput());
+					while (++failsafe < 40 && InventoryUtils.areStacksEqual(outputSlot.getStack(), lastClickedRecipe.getOutput(registryManager))) {
+						InventoryUtils.dropStacksWhileHasItem(gui, outputSlot.id, lastClickedRecipe.getOutput(registryManager));
 						InventoryUtils.tryClearCursor(gui);
-						if (slot != null && !InventoryUtils.isStackEmpty(lastClickedRecipe.getOutput())) {
-							InventoryUtils.dropStacks(gui, lastClickedRecipe.getOutput(), slot, false);
+						if (slot != null && !InventoryUtils.isStackEmpty(lastClickedRecipe.getOutput(registryManager))) {
+							InventoryUtils.dropStacks(gui, lastClickedRecipe.getOutput(registryManager), slot, false);
 						}
 						minecraftClient.interactionManager.clickRecipe(craftingScreen.getScreenHandler().syncId, lastClickedRecipe, true);
 					}

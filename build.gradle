@@ -23,7 +23,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// TODO: switch to official stuff when Masa finishes the official port
-	// Download temp 1.19 MaLiLib and ItemScroller ports from https://kosma.pl/masamods/ and put into libs/
+	// Download https://www.curseforge.com/minecraft/mc-mods/malilib/download/4444338 and https://www.curseforge.com/minecraft/mc-mods/item-scroller/download/4444342
+	// and put into ./libs/
 	modImplementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 

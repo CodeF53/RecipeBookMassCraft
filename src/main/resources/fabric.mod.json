@@ -32,7 +32,7 @@
     "fabric": "*",
     "minecraft": "~1.19",
     "java": ">=17",
-    "malilib": ">=0.12.1",
-    "itemscroller": ">=0.16.0"
+    "malilib": "*",
+    "itemscroller": "*"
   }
 }
