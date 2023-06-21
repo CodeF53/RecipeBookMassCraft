@@ -22,8 +22,7 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// TODO: switch to official stuff when Masa finishes the official port
-	// Download https://www.curseforge.com/minecraft/mc-mods/malilib/download/4444338 and https://www.curseforge.com/minecraft/mc-mods/item-scroller/download/4444342
+	// Download https://legacy.curseforge.com/minecraft/mc-mods/malilib/files/ and https://legacy.curseforge.com/minecraft/mc-mods/item-scroller/files/
 	// and put into ./libs/
 	modImplementation fileTree(dir: 'libs', include: ['*.jar'])
 }
